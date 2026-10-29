@@ -1,0 +1,71 @@
+{
+  "atomCode": "code-stats",
+  "name": "Code statistics",
+  "version": "1.0.0",
+  "description": "Counts lines, code and comments by language in the workspace.",
+  "execution": {
+    "packagePath": "code-stats.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp code-stats.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "includes": {
+      "label": "统计哪些文件（glob，逗号分隔）",
+      "type": "vuex-input",
+      "default": "**/*.java, **/*.py, **/*.js, **/*.ts, **/*.go, **/*.rs, **/*.c, **/*.cpp, **/*.h, **/*.kt, **/*.sh, **/*.yml, **/*.xml, **/*.md"
+    },
+    "excludes": {
+      "label": "排除（glob，逗号分隔）",
+      "type": "vuex-input",
+      "default": "**/target/**, **/build/**, **/node_modules/**, **/.git/**, **/dist/**, **/out/**"
+    },
+    "label": {
+      "label": "报告名称",
+      "type": "vuex-input",
+      "default": "Code statistics"
+    },
+    "outputDir": {
+      "label": "HTML 输出目录",
+      "type": "vuex-input",
+      "default": "out/code-stats"
+    },
+    "maxFiles": {
+      "label": "文件数上限（0 = 不检查）",
+      "type": "vuex-input-number",
+      "default": "0"
+    }
+  },
+  "output": {
+    "files": {
+      "type": "string",
+      "description": "文件数"
+    },
+    "lines": {
+      "type": "string",
+      "description": "总行数"
+    },
+    "code": {
+      "type": "string",
+      "description": "代码行"
+    },
+    "comments": {
+      "type": "string",
+      "description": "注释行"
+    },
+    "blanks": {
+      "type": "string",
+      "description": "空行"
+    },
+    "report": {
+      "type": "report",
+      "description": "构建页内嵌报告"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    },
+    "context": []
+  }
+}

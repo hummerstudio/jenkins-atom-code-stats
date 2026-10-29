@@ -1,0 +1,11 @@
+{
+  "name": "Code statistics",
+  "summary": "Counts lines, code and comments by language in the workspace.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "code-stats"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-code-stats"
+}
