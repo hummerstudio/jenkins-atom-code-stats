@@ -37,4 +37,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: code-stats-atom
-          path: atom/dist/code-stats/
+          path: atom/target/dist/code-stats/
