@@ -5,9 +5,8 @@ Code statistics — port of **sloccount / cloc（同类需求）** (—) as an a
 No cloc needed: the counting rules (which directories to skip, whether generated code counts) are the ones
 the caller states anyway.
 
-## Build and smoke test
+## Build and test
 
 ```bash
-./build.sh
-./tools/smoke.sh
+mvn verify    # compiles, packages into dist/code-stats/, then runs src/test/java/atom/CodeStatsIT.java
 ```
